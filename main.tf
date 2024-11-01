@@ -66,7 +66,7 @@ resource "aws_s3_bucket_cors_configuration" "bucket_cors_configuratio" {
 
 resource "aws_cloudfront_distribution" "cloudfront_distribution" {
   origin {
-    domain_name = aws_s3_bucket.s3_bucket.website_domain
+    domain_name = aws_s3_bucket.s3_bucket.bucket_regional_domain_name
     origin_id   = "S3-${aws_s3_bucket.s3_bucket.id}"
 
     custom_origin_config {
