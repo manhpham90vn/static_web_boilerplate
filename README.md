@@ -3,11 +3,11 @@
 ## Terraform apply
 
 ```shell
-terraform apply -var-file="terraform.tfvars" -auto-approve
+./deploy.sh
 ```
 
 ### Terraform destroy
 
 ```shell
-terraform destroy -var-file="terraform.tfvars" -auto-approve
+./destroy.sh
 ```

@@ -44,6 +44,26 @@ resource "aws_wafv2_web_acl" "wafv2_web_acl" {
     }
   }
 
+  rule {
+    name     = "RateLimitRule"
+    priority = 3
+    statement {
+      rate_based_statement {
+        limit              = 1000
+        aggregate_key_type = "IP"
+      }
+    }
+    action {
+      block {}
+    }
+
+    visibility_config {
+      cloudwatch_metrics_enabled = true
+      metric_name                = "RateLimitRule"
+      sampled_requests_enabled   = true
+    }
+  }
+
   token_domains = [var.domain_name, "www.${var.domain_name}"]
 
   visibility_config {
