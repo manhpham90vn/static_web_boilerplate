@@ -1,12 +1,12 @@
 # Static web
 
-## Terraform apply
+## Deploy
 
 ```shell
 ./deploy.sh
 ```
 
-### Terraform destroy
+### Destroy
 
 ```shell
 ./destroy.sh
